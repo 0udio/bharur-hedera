@@ -227,3 +227,31 @@ body {
   background: linear-gradient(#000, transparent);
   opacity: 0.5;
 }
+.loading-bar{
+  color: #fff;
+  padding: 0;
+  margin: 30px 520px;
+  
+}
+.meter{
+  width: 100%;
+  height: 35px;
+  align-items: center;
+
+}
+meter::-webkit-meter-bar{
+  background: none;
+  box-shadow: 0 5px 5px -5px #333 inset;
+  background-color: whitesmoke;
+
+}
+meter::-webkit-meter-optimum-value{
+  background:linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa);
+          
+}
+p{
+  font-weight: 600;
+  color:#fff;
+  position:relative;
+
+}

@@ -17,7 +17,7 @@ function useKeyPress(targetKey: any) {
   // If pressed key is our target key then set to true
   function downHandler({ key }: any) {
     if (key === targetKey) {
-      setKeyPressed(true);
+    setKeyPressed(true);
     }
   }
   // If released key is our target key then set to false
@@ -56,12 +56,13 @@ const App = () => {
       animationDuration: speedProps
     }
   });
-
+  
   const downHandler = ({ key }: any) => {
     if (key === 'ArrowDown') {
       // console.log(key, speed);
       if (speed > 0 && speed <= 5) {
         setSpeed(speed + 0.5);
+        
       } else {
         setSpeed(0);
       }
@@ -72,11 +73,16 @@ const App = () => {
     if (key === 'ArrowUp') {
       // console.log(key, speed);
       if (speed > 0 && speed <= 5) {
+          
         if (speed > 0.3) {
+        
           if (speed <= 0.5) {
             setSpeed(speed - 0.05);
+          
+            
           } else if (speed <= 1) {
             setSpeed(speed - 0.1);
+          
           } else {
             setSpeed(speed - 0.5);
           }
@@ -92,6 +98,7 @@ const App = () => {
       // console.log(key, left);
       if (left <= 70) {
         setLeft(left + 5);
+      
       }
     }
   };
@@ -101,6 +108,7 @@ const App = () => {
       // console.log(key, left);
       if (left >= 10) {
         setLeft(left - 5);
+      
       }
     }
   };
@@ -155,6 +163,10 @@ const App = () => {
             <div className="crossCircle"></div>
           </div>
         </div>
+        <div className="loading-bar">
+        <p>Carbon Foot Print: </p>
+          <meter className="meter" value={speed * 50} min="0" max="100"></meter>
+          </div>
         <div className="car" style={{ left: `${left}%` }}>
           <img src={"/images/car1.png"} alt="car" />
         </div>
@@ -167,5 +179,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
